@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice with My Son</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ff7043;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #ff5722;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#tablature">Guitar Tablature</a>
+        <a href="#videos">YouTube Videos</a>
+        <a href="#schedule">Practice Schedule</a>
+        <a href="#notes">Notes</a>
+    </div>
+
+    <div class="content">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search...">
+        </div>
+
+        <section id="tablature">
+            <h2>Guitar Tablature</h2>
+            <ul>
+                <li><a href="https://tabs.ultimate-guitar.com/tab/ben-e-king/stand-by-me-chords-1724608"
+                        target="_blank">Tablature: Stand by Me</a></li>
+            </ul>
+        </section>
+
+        <section id="videos">
+            <h2>Backing Track: Stand by Me</h2>
+            <div>
+                <iframe src="https://www.youtube.com/embed/Y7aWiroglXg?si=bNj1AI4kj_9ljpWx" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="schedule">
+            <h2>Practice Schedule</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Activity</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>Guitar Practice</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>Music Theory</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Song Practice</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="notes">
+            <h2>Notes</h2>
+            <textarea rows="10" cols="100" placeholder="Write your notes here..."></textarea>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('search').addEventListener('input', function () {
+            let filter = this.value.toUpperCase();
+            let sections = document.querySelectorAll('.content section');
+            sections.forEach(section => {
+                if (section.innerText.toUpperCase().includes(filter)) {
+                    section.style.display = '';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
